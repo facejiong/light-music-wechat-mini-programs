@@ -2,3 +2,10 @@
 page{
   height:100%;
 }
+
+.name{
+  font-size: 40rpx;
+}
+.author{
+  font-size: 30rpx;
+}

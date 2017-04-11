@@ -7,6 +7,7 @@ Page({
     audioList: audioList,
     audioIndex: 0,
     pauseStatus: true,
+    listShow: false,
   },
   onLoad: function () {
     console.log('onLoad')
@@ -70,6 +71,48 @@ Page({
     } else {
       this.audioCtx.pause()
       this.setData({pauseStatus: true})
+    }
+  },
+  bindTapList: function(e) {
+    console.log('bindTapList')
+    console.log(e)
+    this.setData({
+      listShow: true
+    })
+  },
+  bindTapChoose: function(e) {
+    console.log('bindTapChoose')
+    console.log(e)
+    this.setData({
+      audioIndex: parseInt(e.currentTarget.id, 10),
+      listShow: false
+    })
+    wx.setStorageSync('audioIndex', parseInt(e.currentTarget.id, 10))
+    let that = this
+    setTimeout(() => {
+      if (that.data.pauseStatus === true) {
+        that.audioCtx.play()
+      }
+    }, 1000)
+  },
+  onShareAppMessage: function () {
+    let that = this
+    return {
+      title: 'light轻音乐：' + that.data.audioList[that.data.audioIndex].name,
+      success: function(res) {
+        wx.showToast({
+          title: '分享成功',
+          icon: 'success',
+          duration: 2000
+        })
+      },
+      fail: function(res) {
+        wx.showToast({
+          title: '分享失败',
+          icon: 'cancel',
+          duration: 2000
+        })
+      }
     }
   }
 })

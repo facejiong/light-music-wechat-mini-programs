@@ -7,22 +7,49 @@
   <!--第二层层：灰色蒙层-->
   <view class="bg-gray">
   </view>
-  <!--第三层：旋转图-->
-  <view class="rotate-disk-container">
-    <view class="rotate-disk {{pauseStatus === false ? 'rotate-360' : 'rotate-360-paused'}}">
-      <image class="poster" src="{{audioList[audioIndex].poster}}"></image>
+  <!--第三层：player层-->
+  <view style="display: {{listShow === true ? 'none' : ''}}">
+    <!--旋转图-->
+    <view class="rotate-disk-container">
+      <view class="rotate-disk {{pauseStatus === false ? 'rotate-360' : 'rotate-360-paused'}}">
+        <image class="poster" src="{{audioList[audioIndex].poster}}"></image>
+      </view>
     </view>
-    <audio id="audio" src="{{audioList[audioIndex].src}}" style="display: none"></audio>
-  </view>
-  <view class="title-container">
-    <view class="text">
-      <view><text class="name">{{audioList[audioIndex].name}}</text></view>
-      <view><text class="author">-- {{audioList[audioIndex].author}} --</text></view>
+    <!--操作-->
+    <view class="title-container">
+      <view class="title-left"></view>
+      <view class="text">
+        <view><text class="name">{{audioList[audioIndex].name}}</text></view>
+        <view><text class="author">-- {{audioList[audioIndex].author}} --</text></view>
+      </view>
+      <image src="../../assets/img/list.png" class="icon-list" bindtap="bindTapList"></image>
+    </view>
+    <view class="operation-container">
+      <image src="../../assets/img/prev.png" class="icon-prev" bindtap="bindTapPrev"></image>
+      <image
+        src="{{pauseStatus === false ? '../../assets/img/pause.png' : '../../assets/img/play.png'}}"
+        class="icon-play" bindtap="bindTapPlay"
+        >
+        </image>
+      <image src="../../assets/img/next.png" class="icon-next" bindtap="bindTapNext"></image>
     </view>
   </view>
-  <view class="operation-container">
-    <image src="../../assets/img/prev.png" class="icon-prev" bindtap="bindTapPrev"></image>
-    <image src="{{pauseStatus === false ? '../../assets/img/pause.png' : '../../assets/img/play.png'}}" class="icon-play" bindtap="bindTapPlay"></image>
-    <image src="../../assets/img/next.png" class="icon-next" bindtap="bindTapNext"></image>
-  </view>
+  <!--第五层：列表页-->
+  <scroll-view class="list" scroll-y style="display: {{listShow === true ? '' : 'none'}}">
+    <view wx:for="{{audioList}}" wx:key="{{index}}">
+      <view
+        id="{{index}}"
+        class="list-one {{index === audioIndex ? 'list-one-choose' : ''}}"
+        hover-class="list-one-choose"
+        bindtap="bindTapChoose"
+        >
+        <image class="list-one-poster" src="{{item.poster}}"></image>
+        <view class="list-one-right">
+          <view class="name">歌名：{{item.name}}</view>
+          <view class="author">歌手：{{item.author}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <audio id="audio" src="{{audioList[audioIndex].src}}" style="display: none"></audio>
 </view>
