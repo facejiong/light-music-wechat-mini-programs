@@ -3,6 +3,7 @@
   height: 100%;
   overflow: hidden;
 }
+/*1*/
 .bg{
   height: 100%;
   width: 100%;
@@ -12,6 +13,7 @@
   width: 100%;
   filter: blur(50rpx);
 }
+/*2*/
 .bg-gray{
   position: absolute;
   top: 0;
@@ -19,7 +21,8 @@
   width: 100%;
   background-color: rgba(54, 43, 41, 0.1);
 }
-.content{
+/*3*/
+.rotate-disk-container{
   position: absolute;
   top: 0;
   height: 100%;
@@ -29,19 +32,12 @@
   justify-content: center;
   align-items: center;
 }
-.rotate-disk-container{
-  width: 600rpx;
-  height: 600rpx;
-  border-radius: 300rpx;
-  overflow: hidden;
-  border: 20rpx solid rgba(54, 43, 41, 0.2);
-}
 .rotate-disk{
   width: 600rpx;
   height: 600rpx;
   border-radius: 300rpx;
   overflow: hidden;
-  
+  border: 20rpx solid rgba(54, 43, 41, 0.2);
 }
 .poster{
   width: 600rpx;
@@ -50,10 +46,69 @@
 .rotate-360{
   animation: rotate 10s linear infinite;
 }
-
 @keyframes rotate
 {
   0%   {transform: rotate(0deg);}
   50% {transform: rotate(180deg);}
   100% {transform: rotate(360deg);}
+}
+/*4*/
+.title-container{
+  position: absolute;
+  top: 0;
+  height: 160rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.text{
+  color: #fff;
+  text-align: center;
+}
+.name{
+  font-size: 40rpx;
+}
+.author{
+  font-size: 30rpx;
+}
+/*4*/
+.operation-container{
+  position: absolute;
+  bottom: 0;
+  height: 160rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.operation-icon{
+  width: 80rpx;
+  height: 80rpx;
+}
+.icon-prev{
+  background-image: url('../../assets/img/icon.png');
+  background-repeat: no-repeat;
+  background-position: -76px -116px;
+}
+.icon-play{
+  background-image: url('../../assets/img/icon.png');
+  background-repeat: no-repeat;
+  background-position: -136px -110px;
+  width: 100rpx;
+  height: 100rpx;
+}
+.icon-pause{
+  background-image: url('../../assets/img/icon.png');
+  background-repeat: no-repeat;
+  background-position: -136px -194px;
+  width: 100rpx;
+  height: 100rpx;
+}
+.icon-next{
+  background-image: url('../../assets/img/icon.png');
+  background-repeat: no-repeat;
+  background-position: -204px -116px;
 }

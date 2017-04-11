@@ -1,18 +1,28 @@
 <!--index.wxml-->
 <view class="container">
+  <!--第一层层：背景图背景图，高斯模糊-->
   <view class="bg">
     <image class="poster" mode="scaleToFill" src="{{audioList[audioIndex].poster}}"></image>
   </view>
+  <!--第二层层：灰色蒙层-->
   <view class="bg-gray">
   </view>
-  <view class="content">
-    <view class="rotate-disk-container {{pauseStatus === false ? 'rotate-360' : ''}}">
-      <view class="rotate-disk">
-        <image class="poster" src="{{audioList[audioIndex].poster}}"></image>
-        <image src="../../assets/img/video-play.png"></image>
-      </view>
+  <!--第三层：旋转图-->
+  <view class="rotate-disk-container">
+    <view class="rotate-disk {{pauseStatus === false ? 'rotate-360' : ''}}">
+      <image class="poster" src="{{audioList[audioIndex].poster}}"></image>
     </view>
-    <!--<button type="default" bindtap="bindViewTap" > default </button>-->
     <audio id="audio" src="{{audioList[audioIndex].src}}" style="display: none"></audio>
+  </view>
+  <view class="title-container">
+    <view class="text">
+      <view><text class="name">{{audioList[audioIndex].name}}</text></view>
+      <view><text class="author">-- {{audioList[audioIndex].author}} --</text></view>
+    </view>
+  </view>
+  <view class="operation-container">
+    <view class="operation-icon icon-prev"></view>
+    <view class="operation-icon icon-play"></view>
+    <view class="operation-icon icon-next"></view>
   </view>
 </view>
