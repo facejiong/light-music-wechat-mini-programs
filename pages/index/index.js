@@ -87,13 +87,13 @@ Page({
       audioIndex: parseInt(e.currentTarget.id, 10),
       listShow: false
     })
-    wx.setStorageSync('audioIndex', parseInt(e.currentTarget.id, 10))
     let that = this
     setTimeout(() => {
-      if (that.data.pauseStatus === true) {
+      if (that.data.pauseStatus === false) {
         that.audioCtx.play()
       }
     }, 1000)
+    wx.setStorageSync('audioIndex', parseInt(e.currentTarget.id, 10))
   },
   onShareAppMessage: function () {
     let that = this
