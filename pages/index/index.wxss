@@ -35,7 +35,7 @@
 .rotate-disk{
   width: 600rpx;
   height: 600rpx;
-  border-radius: 300rpx;
+  border-radius: 600rpx;
   overflow: hidden;
   border: 20rpx solid rgba(54, 43, 41, 0.2);
 }
@@ -45,6 +45,10 @@
 }
 .rotate-360{
   animation: rotate 10s linear infinite;
+}
+.rotate-360-paused{
+  animation: rotate 10s linear infinite;
+  animation-play-state: paused;
 }
 @keyframes rotate
 {
@@ -85,30 +89,34 @@
   align-items: center;
 }
 .operation-icon{
-  width: 80rpx;
-  height: 80rpx;
 }
 .icon-prev{
   background-image: url('../../assets/img/icon.png');
   background-repeat: no-repeat;
   background-position: -76px -116px;
+  width: 80rpx;
+  height: 80rpx;
 }
 .icon-play{
   background-image: url('../../assets/img/icon.png');
   background-repeat: no-repeat;
-  background-position: -136px -110px;
-  width: 100rpx;
-  height: 100rpx;
+  background-position: -136px -112px;
+  margin: 0 20rpx;
+  width: 98rpx;
+  height: 98rpx;
 }
 .icon-pause{
   background-image: url('../../assets/img/icon.png');
   background-repeat: no-repeat;
-  background-position: -136px -194px;
-  width: 100rpx;
-  height: 100rpx;
+  background-position: -137px -193px;
+  margin: 0 20rpx;
+  width: 98rpx;
+  height: 98rpx;
 }
 .icon-next{
   background-image: url('../../assets/img/icon.png');
   background-repeat: no-repeat;
   background-position: -204px -116px;
+  width: 80rpx;
+  height: 80rpx;
 }

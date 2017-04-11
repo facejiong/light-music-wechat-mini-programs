@@ -9,7 +9,7 @@
   </view>
   <!--第三层：旋转图-->
   <view class="rotate-disk-container">
-    <view class="rotate-disk {{pauseStatus === false ? 'rotate-360' : ''}}">
+    <view class="rotate-disk {{pauseStatus === false ? 'rotate-360' : 'rotate-360-paused'}}">
       <image class="poster" src="{{audioList[audioIndex].poster}}"></image>
     </view>
     <audio id="audio" src="{{audioList[audioIndex].src}}" style="display: none"></audio>
@@ -21,8 +21,8 @@
     </view>
   </view>
   <view class="operation-container">
-    <view class="operation-icon icon-prev"></view>
-    <view class="operation-icon icon-play"></view>
-    <view class="operation-icon icon-next"></view>
+    <view class="operation-icon icon-prev" bindtap="bindTapPrev"></view>
+    <view class="operation-icon {{pauseStatus === false ? 'icon-pause' : 'icon-play'}}" bindtap="bindTapPlay"></view>
+    <view class="operation-icon icon-next" bindtap="bindTapNext"></view>
   </view>
 </view>
