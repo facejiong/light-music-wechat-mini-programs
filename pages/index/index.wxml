@@ -22,7 +22,7 @@
   </view>
   <view class="operation-container">
     <image src="../../assets/img/prev.png" class="icon-prev" bindtap="bindTapPrev"></image>
-    <image src="{{pauseStatus === false ? '../../assets/img/paused.png' : '../../assets/img/play.png'}}" class="icon-play" bindtap="bindTapPlay"></image>
+    <image src="{{pauseStatus === false ? '../../assets/img/pause.png' : '../../assets/img/play.png'}}" class="icon-play" bindtap="bindTapPlay"></image>
     <image src="../../assets/img/next.png" class="icon-next" bindtap="bindTapNext"></image>
   </view>
 </view>
