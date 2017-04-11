@@ -1,0 +1,59 @@
+/**index.wxss**/
+.container{
+  height: 100%;
+  overflow: hidden;
+}
+.bg{
+  height: 100%;
+  width: 100%;
+}
+.bg image{
+  height: 100%;
+  width: 100%;
+  filter: blur(50rpx);
+}
+.bg-gray{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(54, 43, 41, 0.1);
+}
+.content{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.rotate-disk-container{
+  width: 600rpx;
+  height: 600rpx;
+  border-radius: 300rpx;
+  overflow: hidden;
+  border: 20rpx solid rgba(54, 43, 41, 0.2);
+}
+.rotate-disk{
+  width: 600rpx;
+  height: 600rpx;
+  border-radius: 300rpx;
+  overflow: hidden;
+  
+}
+.poster{
+  width: 600rpx;
+  height: 600rpx;
+}
+.rotate-360{
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate
+{
+  0%   {transform: rotate(0deg);}
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
+}

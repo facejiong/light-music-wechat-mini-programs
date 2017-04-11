@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="bg">
+    <image class="poster" mode="scaleToFill" src="{{audioList[audioIndex].poster}}"></image>
+  </view>
+  <view class="bg-gray">
+  </view>
+  <view class="content">
+    <view class="rotate-disk-container {{pauseStatus === false ? 'rotate-360' : ''}}">
+      <view class="rotate-disk">
+        <image class="poster" src="{{audioList[audioIndex].poster}}"></image>
+        <image src="../../assets/img/video-play.png"></image>
+      </view>
+    </view>
+    <!--<button type="default" bindtap="bindViewTap" > default </button>-->
+    <audio id="audio" src="{{audioList[audioIndex].src}}" style="display: none"></audio>
+  </view>
+</view>
