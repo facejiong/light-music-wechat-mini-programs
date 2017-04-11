@@ -91,32 +91,32 @@
 .operation-icon{
 }
 .icon-prev{
-  background-image: url('../../assets/img/icon.png');
+  /*background-image: url('../../assets/img/icon.png');
   background-repeat: no-repeat;
-  background-position: -76px -116px;
+  background-position: -76px -153px;*/
   width: 80rpx;
   height: 80rpx;
 }
 .icon-play{
-  background-image: url('../../assets/img/icon.png');
+  /*background-image: url('../../assets/img/icon.png');
   background-repeat: no-repeat;
-  background-position: -136px -112px;
+  background-position: -136px -153px;*/
   margin: 0 20rpx;
   width: 98rpx;
   height: 98rpx;
 }
 .icon-pause{
-  background-image: url('../../assets/img/icon.png');
+  /*background-image: url('../../assets/img/icon.png');
   background-repeat: no-repeat;
-  background-position: -137px -193px;
+  background-position: -178px -193px;*/
   margin: 0 20rpx;
   width: 98rpx;
   height: 98rpx;
 }
 .icon-next{
-  background-image: url('../../assets/img/icon.png');
+  /*background-image: url('../../assets/img/icon.png');
   background-repeat: no-repeat;
-  background-position: -204px -116px;
+  background-position: -204px -154px;*/
   width: 80rpx;
   height: 80rpx;
 }
