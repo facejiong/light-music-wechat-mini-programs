@@ -35,7 +35,11 @@
     </view>
   </view>
   <!--第五层：列表页-->
-  <scroll-view class="list" scroll-y style="display: {{listShow === true ? '' : 'none'}}">
+  <scroll-view
+    class="list"
+    scroll-y style="display: {{listShow === true ? '' : 'none'}}"
+    scroll-top="{{audioIndex * 68}}"
+    >
     <view wx:for="{{audioList}}" wx:key="{{index}}">
       <view
         id="{{index}}"
