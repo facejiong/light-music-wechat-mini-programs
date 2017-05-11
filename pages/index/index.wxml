@@ -20,7 +20,7 @@
       <view class="title-left"></view>
       <view class="text">
         <view><text class="name">{{audioList[audioIndex].name}}</text></view>
-        <view><text class="author">-- {{audioList[audioIndex].author}} --</text></view>
+        <!--<view><text class="author">-- {{audioList[audioIndex].author}} --</text></view>-->
       </view>
       <image src="../../assets/img/list.png" class="icon-list" bindtap="bindTapList"></image>
     </view>
@@ -49,8 +49,8 @@
         >
         <image class="list-one-poster" src="{{item.poster}}"></image>
         <view class="list-one-right">
-          <view class="name">歌名：{{item.name}}</view>
-          <view class="author">歌手：{{item.author}}</view>
+          <view class="name">{{item.name}}</view>
+          <!--<view class="author">歌手：{{item.author}}</view>-->
         </view>
       </view>
     </view>
