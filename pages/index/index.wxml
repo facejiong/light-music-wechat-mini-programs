@@ -24,6 +24,16 @@
       </view>
       <image src="../../assets/img/list.png" class="icon-list" bindtap="bindTapList"></image>
     </view>
+    <view class="slider-container">
+      <text class="slider-time">{{currentPosition}}</text>
+      <slider
+          value="{{sliderValue}}"
+          bindchange="bindSliderchange"
+          activeColor="#13beec"
+          style="width: 62%;margin: 0;"
+        />
+      <text class="slider-time">{{duration}}</text>
+    </view>
     <view class="operation-container">
       <image src="../../assets/img/prev.png" class="icon-prev" bindtap="bindTapPrev"></image>
       <image
@@ -47,6 +57,9 @@
         hover-class="list-one-choose"
         bindtap="bindTapChoose"
         >
+        <view class="name">
+          <text class="list-index">{{index}}</text>
+        </view>
         <image class="list-one-poster" src="{{item.poster}}"></image>
         <view class="list-one-right">
           <view class="name">{{item.name}}</view>
@@ -55,5 +68,5 @@
       </view>
     </view>
   </scroll-view>
-  <audio id="audio" src="{{audioList[audioIndex].src}}" style="display: none"></audio>
+  <!--<audio id="audio" src="{{audioList[audioIndex].src}}" style="display: none"></audio>-->
 </view>
