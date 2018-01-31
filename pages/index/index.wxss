@@ -76,8 +76,8 @@
   text-align: center;
 }
 .icon-list{
-  width: 50rpx;
-  height: 50rpx;
+  width: 54rpx;
+  height: 36rpx;
   margin: 0 30rpx 0 0;
 }
 .slider-container{

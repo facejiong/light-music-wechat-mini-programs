@@ -25,14 +25,16 @@
       <image src="../../assets/img/list.png" class="icon-list" bindtap="bindTapList"></image>
     </view>
     <view class="slider-container">
-      <text class="slider-time">{{currentPosition}}</text>
+      <text class="slider-time">{{currentPosition === 0 ? '' : currentPosition}}</text>
       <slider
           value="{{sliderValue}}"
           bindchange="bindSliderchange"
           activeColor="#13beec"
           style="width: 62%;margin: 0;"
+          block-size="12"
+          block-color="#13beec"
         />
-      <text class="slider-time">{{duration}}</text>
+      <text class="slider-time">{{duration === 0 ? '' : duration}}</text>
     </view>
     <view class="operation-container">
       <image src="../../assets/img/prev.png" class="icon-prev" bindtap="bindTapPrev"></image>
